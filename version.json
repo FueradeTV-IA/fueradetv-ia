@@ -1,0 +1,8 @@
+{
+  "version": "1.2.0",
+  "novedades": [
+    "Conectado a las actualizaciones automáticas"
+  ],
+  "instalador": "https://github.com/FueradeTV-IA/fueradetv-ia/releases/latest/download/Instalar-FueradeTV-IA.exe",
+  "sha256": "649e4562547c13083babde1be2c7e2c65f2318e08265e9a466930cdd67fffce0"
+}
