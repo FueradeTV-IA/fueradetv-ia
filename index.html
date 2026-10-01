@@ -111,6 +111,8 @@ h3 { font-size: 1.6rem; font-stretch: 87%; font-weight: 750; line-height: 1.1; }
 .store-badge img { width: 200px; height: auto; display: block; }
 .store-badge.soon { flex-direction: column; align-items: center; gap: 6px; }
 .store-badge.soon img { filter: grayscale(1); opacity: .55; }
+.store-badge.soon img.appstore { width: 116px; }
+ms-store-badge { display: block; min-height: 64px; }
 .store-badge.soon span { font-weight: 700; font-size: .85rem; letter-spacing: .08em; text-transform: uppercase; color: var(--blue); }
 .platform .btn { justify-content: center; text-align: center; padding: 12px 14px; font-size: .98rem; line-height: 1.25; }
 details { margin-top: 26px; background: var(--paper); border-radius: 14px; padding: 16px 20px; }
@@ -245,7 +247,8 @@ footer a { color: var(--white); }
         <h3>Windows</h3>
         <p>Para Windows 10 y 11. Desde Microsoft Store se instala sin avisos y se actualiza sola.</p>
         <div class="gap"></div>
-        <a class="store-badge" href="https://apps.microsoft.com/detail/9ND38M4KHB5S?mode=direct" rel="noopener"><img src="https://get.microsoft.com/images/es-es%20dark.svg" alt="Descárgala en Microsoft Store" width="200" height="72"></a>
+        <div class="store-badge"><ms-store-badge productid="9ND38M4KHB5S" language="es-es" theme="dark" window-mode="direct" animation="on"></ms-store-badge></div>
+        <noscript><a class="btn btn-blue" href="https://apps.microsoft.com/detail/9ND38M4KHB5S">Microsoft Store</a></noscript>
         <a class="btn btn-soft" href="https://github.com/FueradeTV-IA/fueradetv-ia/releases/latest/download/Instalar-FueradeTV-IA.exe" rel="noopener">Descarga directa · servidor externo</a>
       </article>
       <article class="platform">
@@ -261,14 +264,14 @@ footer a { color: var(--white); }
         <p>Para Mac con chip Apple o Intel, con macOS 11 o superior.</p>
         <div class="gap"></div>
         <a class="btn btn-blue" href="https://github.com/FueradeTV-IA/fueradetv-ia/releases/latest/download/FueradeTV-IA-Mac.zip" rel="noopener">Descarga directa · servidor externo</a>
-        <div class="store-badge soon" aria-label="Mac App Store: coming soon"><img src="https://tools.applemarketingtools.com/api/badges/download-on-the-mac-app-store/black/es-es?size=250x83" alt="Descargar en el Mac App Store" width="200" height="67"><span>Coming soon</span></div>
+        <div class="store-badge soon" aria-label="Mac App Store: coming soon"><img class="appstore" src="img/appstore.png" alt="App Store" width="116" height="118"><span>Coming soon</span></div>
       </article>
       <article class="platform">
         <div class="icon"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M10 5h4"/></svg></div>
         <h3>iPhone e iPad</h3>
         <p>Estamos preparando la versión para iPhone e iPad. Muy pronto en la App Store.</p>
         <div class="gap"></div>
-        <div class="store-badge soon" aria-label="App Store: coming soon"><img src="https://tools.applemarketingtools.com/api/badges/download-on-the-app-store/black/es-es?size=250x83" alt="Descargar en el App Store" width="200" height="67"><span>Coming soon</span></div>
+        <div class="store-badge soon" aria-label="App Store: coming soon"><img class="appstore" src="img/appstore.png" alt="App Store" width="116" height="118"><span>Coming soon</span></div>
       </article>
     </div>
     <details>
@@ -363,5 +366,6 @@ footer a { color: var(--white); }
     const v = document.querySelector(".hero-bg"); if (v) { v.removeAttribute("autoplay"); v.pause(); }
   }
 </script>
+<script type="module" src="https://get.microsoft.com/badge/ms-store-badge.bundled.js"></script>
 </body>
 </html>
