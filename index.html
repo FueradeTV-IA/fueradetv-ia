@@ -112,7 +112,11 @@ h3 { font-size: 1.6rem; font-stretch: 87%; font-weight: 750; line-height: 1.1; }
 .store-badge.soon { flex-direction: column; align-items: center; gap: 6px; }
 .store-badge.soon img { filter: grayscale(1); opacity: .55; }
 .store-badge.soon img.appstore { width: 116px; }
-ms-store-badge { display: block; min-height: 64px; }
+.store-badge.ms { align-items: center; gap: 12px; padding: 10px 16px; border: 1px solid var(--line); border-radius: 14px; text-decoration: none; color: var(--ink); }
+.store-badge.ms:hover { border-color: var(--blue); }
+.store-badge.ms img { width: 52px; height: auto; }
+.store-badge.ms span { display: flex; flex-direction: column; font-weight: 800; font-size: 1.1rem; line-height: 1.15; }
+.store-badge.ms small { font-weight: 500; font-size: .8rem; color: var(--muted); }
 .store-badge.soon span { font-weight: 700; font-size: .85rem; letter-spacing: .08em; text-transform: uppercase; color: var(--blue); }
 .platform .btn { justify-content: center; text-align: center; padding: 12px 14px; font-size: .98rem; line-height: 1.25; }
 details { margin-top: 26px; background: var(--paper); border-radius: 14px; padding: 16px 20px; }
@@ -247,8 +251,7 @@ footer a { color: var(--white); }
         <h3>Windows</h3>
         <p>Para Windows 10 y 11. Desde Microsoft Store se instala sin avisos y se actualiza sola.</p>
         <div class="gap"></div>
-        <div class="store-badge"><ms-store-badge productid="9ND38M4KHB5S" language="es-es" theme="dark" window-mode="direct" animation="on"></ms-store-badge></div>
-        <noscript><a class="btn btn-blue" href="https://apps.microsoft.com/detail/9ND38M4KHB5S">Microsoft Store</a></noscript>
+        <a class="store-badge ms" href="https://apps.microsoft.com/detail/9ND38M4KHB5S" rel="noopener"><img src="img/msstore.png" alt="" width="64" height="64"><span><small>Descárgala en</small>Microsoft Store</span></a>
         <a class="btn btn-soft" href="https://github.com/FueradeTV-IA/fueradetv-ia/releases/latest/download/Instalar-FueradeTV-IA.exe" rel="noopener">Descarga directa · servidor externo</a>
       </article>
       <article class="platform">
@@ -366,6 +369,5 @@ footer a { color: var(--white); }
     const v = document.querySelector(".hero-bg"); if (v) { v.removeAttribute("autoplay"); v.pause(); }
   }
 </script>
-<script type="module" src="https://get.microsoft.com/badge/ms-store-badge.bundled.js"></script>
 </body>
 </html>
