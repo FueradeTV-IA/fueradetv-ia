@@ -107,6 +107,8 @@ h3 { font-size: 1.6rem; font-stretch: 87%; font-weight: 750; line-height: 1.1; }
 .platform .icon { width: 52px; height: 52px; border-radius: 14px; background: var(--paper); display: grid; place-items: center; color: var(--blue); }
 .platform p { margin: 0; color: var(--muted); font-size: 1rem; }
 .platform .gap { flex: 1; }
+.store-badge { display: flex; justify-content: center; }
+.store-badge img { width: 200px; height: auto; display: block; }
 .platform .btn { justify-content: center; text-align: center; padding: 12px 14px; font-size: .98rem; line-height: 1.25; }
 details { margin-top: 26px; background: var(--paper); border-radius: 14px; padding: 16px 20px; }
 details summary { cursor: pointer; font-weight: 700; }
@@ -200,7 +202,7 @@ footer a { color: var(--white); }
       <h1>Pregunta lo que quieras. <span>Te enseñamos la noticia que lo demuestra.</span></h1>
       <p>La IA de FueradeTV responde a tus preguntas de actualidad usando solo noticias de medios de comunicación verificados, y te muestra la frase exacta de la noticia para que compruebes que es verdad.</p>
       <div class="ctas">
-        <a class="btn btn-main" href="#descargar">Muy pronto, gratis</a>
+        <a class="btn btn-main" href="#descargar">Descargar gratis</a>
         <a class="btn btn-line" href="#video">Ver el vídeo</a>
       </div>
       <div class="free">Para Windows, Android y Mac, y muy pronto en iPhone. Sin registrarte y sin configurar nada.</div>
@@ -232,15 +234,16 @@ footer a { color: var(--white); }
 
 <section class="downloads" id="descargar">
   <div class="wrap">
-    <h2>Muy pronto, gratis</h2>
-    <p class="lead">Estamos a punto de lanzarla. Muy pronto podrás descargarla en tu dispositivo. Incluirá preguntas con IA gratis cada día y las noticias de última hora sin límite.</p>
+    <h2>Descárgala gratis</h2>
+    <p class="lead">Elige tu dispositivo. Incluye preguntas con IA gratis cada día y las noticias de última hora sin límite.</p>
     <div class="platforms">
       <article class="platform first">
         <div class="icon"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
         <h3>Windows</h3>
-        <p>Para Windows 10 y 11. Se instala como cualquier programa y se actualiza sola.</p>
+        <p>Para Windows 10 y 11. Desde Microsoft Store se instala sin avisos y se actualiza sola.</p>
         <div class="gap"></div>
-        <a class="btn btn-blue" href="#" aria-disabled="true">Windows: muy pronto</a>
+        <a class="store-badge" href="https://apps.microsoft.com/detail/9ND38M4KHB5S?mode=direct" rel="noopener"><img src="https://get.microsoft.com/images/es-es%20dark.svg" alt="Descárgala en Microsoft Store" width="200" height="72"></a>
+        <a class="btn btn-soft" href="https://github.com/FueradeTV-IA/fueradetv-ia/releases/latest/download/Instalar-FueradeTV-IA.exe" rel="noopener">Descarga directa · servidor externo</a>
       </article>
       <article class="platform">
         <div class="icon"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M11 18h2"/></svg></div>
@@ -254,7 +257,8 @@ footer a { color: var(--white); }
         <h3>Mac</h3>
         <p>Para Mac con chip Apple o Intel, con macOS 11 o superior.</p>
         <div class="gap"></div>
-        <a class="btn btn-blue" href="#" aria-disabled="true">Mac: muy pronto</a>
+        <a class="btn btn-blue" href="https://github.com/FueradeTV-IA/fueradetv-ia/releases/latest/download/FueradeTV-IA-Mac.zip" rel="noopener">Descarga directa · servidor externo</a>
+        <a class="btn btn-soft" href="#" aria-disabled="true">Mac App Store: muy pronto</a>
       </article>
       <article class="platform">
         <div class="icon"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M10 5h4"/></svg></div>
@@ -267,7 +271,7 @@ footer a { color: var(--white); }
     <details>
       <summary>¿Te sale un aviso al instalar? Es normal, así se resuelve</summary>
       <ul>
-        <li><b>Windows:</b> si aparece la pantalla azul «Windows protegió su PC», pulsa «Más información» y después «Ejecutar de todas formas». Solo pasa la primera vez.</li>
+        <li><b>Windows (descarga directa):</b> si aparece la pantalla azul «Windows protegió su PC», pulsa «Más información» y después «Ejecutar de todas formas». Solo pasa la primera vez.</li>
         <li><b>Android (APK):</b> si el móvil no deja instalarla, pulsa «Ajustes», activa «Permitir de esta fuente» y vuelve atrás. Si aparece Play Protect, pulsa «Más detalles» y «Instalar de todas formas».</li>
         <li><b>Mac:</b> descomprime el archivo y arrastra FueradeTV IA a Aplicaciones. La primera vez, haz clic derecho sobre la app y elige «Abrir». En macOS 15 o posterior, ve a Ajustes del Sistema, Privacidad y seguridad, y pulsa «Abrir igualmente».</li>
       </ul>
