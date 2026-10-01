@@ -1,12 +1,11 @@
 {
-  "version": "1.4.0",
+  "version": "1.5.1",
   "novedades": [
-    "IA gratis de FueradeTV: ya no hace falta configurar nada",
-    "Nuevo botón Ajustes: pon tu propia clave para preguntas ilimitadas",
-    "Ahora ves todas las noticias encontradas sobre tu pregunta"
+    "Ajustes: mira cuántas preguntas con IA te quedan hoy o pon tu propia clave",
+    "Más noticias de respaldo en cada respuesta, y otras relacionadas con el tema",
+    "Más rápida, más segura y con avisos mientras busca"
   ],
-  "instalador": "https://fueradetv-ia.github.io/fueradetv-ia/descargas/Instalar-FueradeTV-IA.exe",
-  "sha256": "25a6bc644855f0aa240ea94a52da5f06166c9f21ad7f08b5b9c54886c2d2d730",
-  "apk": "https://fueradetv-ia.github.io/fueradetv-ia/descargas/FueradeTV-IA.apk",
-  "mac": "https://fueradetv-ia.github.io/fueradetv-ia/descargas/FueradeTV-IA-Mac.zip"
+  "instalador": "https://github.com/FueradeTV-IA/fueradetv-ia/releases/latest/download/Instalar-FueradeTV-IA.exe",
+  "sha256": "e717fe1eae0222f26c6df7d0100a3df9f1e66c018af19f261290e85ee0ffcb73",
+  "mac": "https://github.com/FueradeTV-IA/fueradetv-ia/releases/latest/download/FueradeTV-IA-Mac.zip"
 }
