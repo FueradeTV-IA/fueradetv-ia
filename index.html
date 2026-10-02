@@ -165,8 +165,9 @@ footer { background: var(--ink); color: #C9DCEB; padding: 48px 0; font-size: 1re
 footer .wrap { display: flex; flex-wrap: wrap; gap: 28px; justify-content: space-between; align-items: center; }
 footer a { color: var(--white); }
 .social { display: flex; flex-wrap: wrap; gap: 10px; }
-.social a { text-decoration: none; border: 1px solid rgba(255,255,255,.25); border-radius: 999px; padding: 8px 16px; font-weight: 600; font-size: .95rem; }
-.social a:hover { border-color: var(--white); }
+.social a { display: inline-grid; place-items: center; width: 46px; height: 46px; border-radius: 50%; border: 1px solid rgba(255,255,255,.25); color: var(--white); text-decoration: none; transition: border-color .15s, background .15s; }
+.social a:hover { border-color: var(--white); background: rgba(255,255,255,.08); }
+.social a.pill { width: auto; border-radius: 999px; padding: 0 18px; font-weight: 600; font-size: .95rem; }
 
 @media (max-width: 900px) {
   .bar nav { display: none; }
@@ -353,15 +354,16 @@ footer a { color: var(--white); }
   <div class="wrap">
     <div>
       <div class="brand" style="margin-bottom:10px"><img src="img/icono-180.png" alt="">FueradeTV IA</div>
-      <div>© 2026 FueradeTV. <a href="privacidad.html">Política de privacidad</a>. Contacto: <a href="mailto:fueradetv@protonmail.com">fueradetv@protonmail.com</a></div>
+      <div>© 2026 FueradeTV. <a href="privacidad.html">Política de privacidad</a>. Contacto: <a href="https://fueradetv.pages.dev/" rel="noopener">fueradetv.pages.dev</a> · <a href="mailto:fueradetv@protonmail.com">fueradetv@protonmail.com</a></div>
     </div>
     <nav class="social" aria-label="FueradeTV en redes sociales">
-      <a href="https://www.instagram.com/fuerade.tv/" rel="noopener">Instagram</a>
-      <a href="https://www.youtube.com/@fueradetv?sub_confirmation=1" rel="noopener">YouTube</a>
-      <a href="https://www.tiktok.com/@fueradetvnoticias" rel="noopener">TikTok</a>
-      <a href="https://x.com/fueradetv" rel="noopener">X</a>
-      <a href="https://whatsapp.com/channel/0029VaD8UVn35fLuci9toi0f" rel="noopener">WhatsApp</a>
-      <a href="https://buymeacoffee.com/fueradetv" rel="noopener">Apóyanos</a>
+      <a href="https://www.tiktok.com/@fueradetvnoticias" rel="noopener" aria-label="TikTok" title="TikTok"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.6 2h-3.3v13.2a2.9 2.9 0 1 1-2-2.8V9a6.3 6.3 0 1 0 5.3 6.2V8.6a7.6 7.6 0 0 0 4.4 1.4V6.7a4.4 4.4 0 0 1-4.4-4.7z"/></svg></a>
+      <a href="https://www.instagram.com/fuerade.tv/" rel="noopener" aria-label="Instagram" title="Instagram"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+      <a href="https://www.youtube.com/@fueradetv?sub_confirmation=1" rel="noopener" aria-label="YouTube" title="YouTube"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 8.2a3 3 0 0 0-2.1-2.1C18 5.6 12 5.6 12 5.6s-6 0-7.9.5A3 3 0 0 0 2 8.2 31 31 0 0 0 1.6 12a31 31 0 0 0 .4 3.8 3 3 0 0 0 2.1 2.1c1.9.5 7.9.5 7.9.5s6 0 7.9-.5a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .4-3.8 31 31 0 0 0-.4-3.8zM10 15V9l5.2 3z"/></svg></a>
+      <a href="https://www.facebook.com/share/18eLTUnoWq/" rel="noopener" aria-label="Facebook" title="Facebook"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 8h3V4h-3a4 4 0 0 0-4 4v2H8v4h2v8h4v-8h3l1-4h-4V8.5a.5.5 0 0 1 .5-.5z"/></svg></a>
+      <a href="https://x.com/fueradetv" rel="noopener" aria-label="X" title="X"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.8 3h3.1l-6.8 7.7L22 21h-6.2l-4.9-6.4L5.3 21H2.2l7.2-8.3L2 3h6.4l4.4 5.8zm-1.1 16.2h1.7L7.4 4.7H5.6z"/></svg></a>
+      <a href="https://whatsapp.com/channel/0029VaD8UVn35fLuci9toi0f" rel="noopener" aria-label="Canal de WhatsApp" title="WhatsApp"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3z"/></svg></a>
+      <a class="pill" href="https://buymeacoffee.com/fueradetv" rel="noopener">Apóyanos</a>
     </nav>
   </div>
 </footer>
