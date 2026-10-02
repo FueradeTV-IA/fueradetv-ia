@@ -107,17 +107,18 @@ h3 { font-size: 1.6rem; font-stretch: 87%; font-weight: 750; line-height: 1.1; }
 .platform .icon { width: 52px; height: 52px; border-radius: 14px; background: var(--paper); display: grid; place-items: center; color: var(--blue); }
 .platform p { margin: 0; color: var(--muted); font-size: 1rem; }
 .platform .gap { flex: 1; }
-.store-badge { display: flex; justify-content: center; }
-.store-badge img { width: 200px; height: auto; display: block; }
-.store-badge.soon { flex-direction: column; align-items: center; gap: 6px; }
-.store-badge.soon img { filter: grayscale(1); opacity: .55; }
-.store-badge.soon img.appstore { width: 116px; }
-.store-badge.ms { align-items: center; gap: 12px; padding: 10px 16px; border: 1px solid var(--line); border-radius: 14px; text-decoration: none; color: var(--ink); }
-.store-badge.ms:hover { border-color: var(--blue); }
-.store-badge.ms img { width: 52px; height: auto; }
-.store-badge.ms span { display: flex; flex-direction: column; font-weight: 800; font-size: 1.1rem; line-height: 1.15; }
-.store-badge.ms small { font-weight: 500; font-size: .8rem; color: var(--muted); }
-.store-badge.soon span { font-weight: 700; font-size: .85rem; letter-spacing: .08em; text-transform: uppercase; color: var(--blue); }
+.store-slot { height: 84px; display: flex; align-items: center; justify-content: center; }
+.action-slot { height: 64px; display: flex; align-items: center; justify-content: center; }
+.action-slot .btn { width: 100%; }
+.store-box { display: flex; align-items: center; gap: 12px; width: 100%; max-width: 230px; height: 76px; padding: 0 16px; border: 1px solid var(--line); border-radius: 14px; text-decoration: none; color: var(--ink); box-sizing: border-box; }
+a.store-box:hover { border-color: var(--blue); }
+.store-box img { width: 46px; height: auto; flex: none; }
+.store-box span { display: flex; flex-direction: column; font-weight: 800; font-size: 1.05rem; line-height: 1.15; }
+.store-box small { font-weight: 500; font-size: .78rem; color: var(--muted); }
+.store-box.soon { filter: grayscale(1); opacity: .55; }
+.store-box img.gplay { width: 100%; max-width: 190px; margin: 0 auto; }
+#playLink { border: 0; padding: 0; justify-content: center; }
+.soon-label { font-weight: 700; font-size: .85rem; letter-spacing: .08em; text-transform: uppercase; color: var(--blue); }
 .platform .btn { justify-content: center; text-align: center; padding: 12px 14px; font-size: .98rem; line-height: 1.25; }
 details { margin-top: 26px; background: var(--paper); border-radius: 14px; padding: 16px 20px; }
 details summary { cursor: pointer; font-weight: 700; }
@@ -251,30 +252,32 @@ footer a { color: var(--white); }
         <h3>Windows</h3>
         <p>Para Windows 10 y 11. Desde Microsoft Store se instala sin avisos y se actualiza sola.</p>
         <div class="gap"></div>
-        <a class="store-badge ms" href="https://apps.microsoft.com/detail/9ND38M4KHB5S" rel="noopener"><img src="img/msstore.png" alt="" width="64" height="64"><span><small>Descárgala en</small>Microsoft Store</span></a>
-        <a class="btn btn-soft" href="https://github.com/FueradeTV-IA/fueradetv-ia/releases/latest/download/Instalar-FueradeTV-IA.exe" rel="noopener">Descarga directa · servidor externo</a>
+        <div class="store-slot"><a class="store-box" href="https://apps.microsoft.com/detail/9ND38M4KHB5S" rel="noopener"><img src="img/msstore.png" alt="" width="52" height="48"><span><small>Descárgala en</small>Microsoft Store</span></a></div>
+        <div class="action-slot"><a class="btn btn-soft" href="https://github.com/FueradeTV-IA/fueradetv-ia/releases/latest/download/Instalar-FueradeTV-IA.exe" rel="noopener">Descarga directa · servidor externo</a></div>
       </article>
       <article class="platform">
         <div class="icon"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M11 18h2"/></svg></div>
         <h3>Android</h3>
         <p>Para móviles y tablets con Android 7 o superior.</p>
         <div class="gap"></div>
-        <div class="store-badge soon" id="playLink" aria-label="Google Play: coming soon"><img src="https://play.google.com/intl/es_es/badges/static/images/badges/es_badge_web_generic.png" alt="Disponible en Google Play" width="220" height="85"><span>Coming soon</span></div>
-              </article>
+        <div class="store-slot"><div class="store-box soon" id="playLink" aria-label="Google Play (próximamente)"><img class="gplay" src="https://play.google.com/intl/es_es/badges/static/images/badges/es_badge_web_generic.png" alt="Disponible en Google Play" width="190" height="73"></div></div>
+        <div class="action-slot"><span class="soon-label">Coming soon</span></div>
+      </article>
       <article class="platform">
         <div class="icon"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M1 20h22"/></svg></div>
         <h3>Mac</h3>
         <p>Para Mac con chip Apple o Intel, con macOS 11 o superior.</p>
         <div class="gap"></div>
-        <div class="store-badge soon" aria-label="Mac App Store: coming soon"><img class="appstore" src="img/appstore.png" alt="App Store" width="116" height="118"><span>Coming soon</span></div>
-        <a class="btn btn-soft" href="https://github.com/FueradeTV-IA/fueradetv-ia/releases/latest/download/FueradeTV-IA-Mac.zip" rel="noopener">Descarga directa · servidor externo</a>
+        <div class="store-slot"><div class="store-box soon" aria-label="Mac App Store (próximamente)"><img src="img/appstore-icono.png" alt="" width="46" height="46"><span><small>Descárgalo en el</small>Mac App Store</span></div></div>
+        <div class="action-slot"><a class="btn btn-soft" href="https://github.com/FueradeTV-IA/fueradetv-ia/releases/latest/download/FueradeTV-IA-Mac.zip" rel="noopener">Descarga directa · servidor externo</a></div>
       </article>
       <article class="platform">
         <div class="icon"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M10 5h4"/></svg></div>
         <h3>iPhone e iPad</h3>
         <p>Estamos preparando la versión para iPhone e iPad. Muy pronto en la App Store.</p>
         <div class="gap"></div>
-        <div class="store-badge soon" aria-label="App Store: coming soon"><img class="appstore" src="img/appstore.png" alt="App Store" width="116" height="118"><span>Coming soon</span></div>
+        <div class="store-slot"><div class="store-box soon" aria-label="App Store (próximamente)"><img src="img/appstore-icono.png" alt="" width="46" height="46"><span><small>Descárgalo en el</small>App Store</span></div></div>
+        <div class="action-slot"><span class="soon-label">Coming soon</span></div>
       </article>
     </div>
     <details>
