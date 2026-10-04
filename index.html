@@ -159,6 +159,8 @@ details b { color: var(--text); }
 .film p { color: var(--muted); }
 .film .frame { position: relative; border-radius: 20px; padding: 1px; background: var(--grad); box-shadow: 0 30px 90px rgba(46,123,255,.35); }
 .film video { width: 100%; border-radius: 19px; background: #000; }
+.film-note { grid-column: 2; margin: -32px 0 0; font-size: .85rem; color: var(--muted); text-align: right; }
+@media (max-width: 900px) { .film-note { grid-column: auto; margin-top: -32px; } }
 
 /* Funciones */
 .features { padding: 96px 0; }
@@ -346,6 +348,7 @@ footer a { color: var(--white); }
       <source src="video/fueradetv-ia.mp4" type="video/mp4">
       Tu navegador no puede reproducir el vídeo. <a href="video/fueradetv-ia.mp4">Descárgalo aquí</a>.
     </video></div>
+    <p class="film-note">Vídeo creado con ayuda de inteligencia artificial.</p>
   </div>
 </section>
 
