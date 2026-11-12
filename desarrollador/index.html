@@ -1,0 +1,346 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FueradeTV · Desarrollador de aplicaciones</title>
+<meta name="description" content="FueradeTV desarrolla aplicaciones para Windows, Android y Mac: FueradeTV IA, el asistente de noticias con fuentes verificadas, y Lucas, el editor de vídeo para creadores. Próximamente, juegos.">
+<meta property="og:title" content="FueradeTV · Desarrollador de aplicaciones">
+<meta property="og:description" content="Apps de FueradeTV: FueradeTV IA y Lucas. Próximamente, más apps y juegos.">
+<meta property="og:image" content="https://fueradetv-ia.pages.dev/img/og.jpg">
+<meta property="og:url" content="https://fueradetv-ia.pages.dev/desarrollador/">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#050B18">
+<link rel="icon" type="image/png" sizes="32x32" href="../img/favicon-32.png">
+<link rel="apple-touch-icon" href="../img/icono-180.png">
+<link rel="canonical" href="https://fueradetv-ia.pages.dev/desarrollador/">
+<style>
+@font-face { font-family: Archivo; src: url(../fonts/archivo.woff) format("woff"); font-weight: 100 900; font-stretch: 62% 125%; font-display: swap; }
+@font-face { font-family: "Source Serif 4"; font-style: italic; src: url(../fonts/sourceserif4-italic.woff) format("woff"); font-weight: 400 600; font-display: swap; }
+
+/* Estilo del logo nuevo: azul noche, azul neón y destello violeta */
+:root {
+  --bg: #050B18;
+  --bg-2: #0A1428;
+  --card: rgba(18, 34, 64, .55);
+  --card-solid: #0E1B33;
+  --line: rgba(120, 170, 255, .16);
+  --line-2: rgba(120, 170, 255, .32);
+  --text: #EAF2FF;
+  --muted: #9DB2D3;
+  --neon: #2E9BFF;
+  --cyan: #4FD1FF;
+  --violet: #8A6CFF;
+  --white: #FFFFFF;
+  --grad: linear-gradient(135deg, #4FD1FF 0%, #2E7BFF 55%, #8A6CFF 100%);
+  --glow: 0 0 0 1px rgba(79,209,255,.35), 0 10px 40px rgba(46,123,255,.35);
+  --display: Archivo, "Arial Narrow", sans-serif;
+  --body: Archivo, system-ui, sans-serif;
+  --quote: "Source Serif 4", Georgia, serif;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before { animation: none !important; } }
+body { margin: 0; background: var(--bg); color: var(--text); font: 400 18px/1.6 var(--body); -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+img, video { max-width: 100%; height: auto; display: block; }
+a { color: var(--cyan); }
+:focus-visible { outline: 3px solid var(--cyan); outline-offset: 3px; border-radius: 8px; }
+.wrap { max-width: 1160px; margin: 0 auto; padding: 0 24px; }
+
+h1, h2, h3 { font-family: var(--display); font-stretch: 75%; font-weight: 850; line-height: 1; margin: 0; letter-spacing: -.005em; }
+h2 { font-size: clamp(2.3rem, 5vw, 3.6rem); margin-bottom: .45em; }
+h3 { font-size: 1.55rem; font-stretch: 87%; font-weight: 750; line-height: 1.1; }
+.grad-text { background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.lead { font-size: 1.2rem; color: var(--muted); max-width: 38em; margin: 0 0 1.6em; }
+.eyebrow { display: inline-flex; align-items: center; gap: 8px; font: 700 .78rem var(--body); letter-spacing: .16em; text-transform: uppercase; color: var(--cyan); margin-bottom: 16px; }
+.eyebrow::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--cyan); box-shadow: 0 0 12px var(--cyan); }
+
+.btn { display: inline-flex; align-items: center; gap: 10px; font: 700 1.05rem var(--body); text-decoration: none; border-radius: 14px; padding: 15px 24px; border: 1px solid transparent; cursor: pointer; transition: transform .15s, box-shadow .2s, border-color .15s, background .15s; }
+.btn:hover { transform: translateY(-2px); }
+.btn-main { background: var(--grad); color: var(--white); box-shadow: var(--glow); }
+.btn-main:hover { box-shadow: 0 0 0 1px rgba(79,209,255,.6), 0 14px 50px rgba(46,123,255,.55); }
+.btn-line { border-color: var(--line-2); color: var(--white); background: rgba(255,255,255,.03); backdrop-filter: blur(6px); }
+.btn-line:hover { border-color: var(--cyan); }
+.btn-soft { background: transparent; color: var(--cyan); border-color: var(--line-2); width: 100%; justify-content: center; font-size: .95rem; padding: 11px 16px; }
+.btn-soft:hover { border-color: var(--cyan); background: rgba(79,209,255,.06); }
+.btn svg { flex: none; }
+
+/* Barra superior */
+.bar { position: sticky; top: 0; z-index: 20; background: rgba(5,11,24,.72); backdrop-filter: blur(14px); border-bottom: 1px solid var(--line); }
+.bar .wrap { display: flex; align-items: center; justify-content: space-between; height: 70px; gap: 16px; }
+.brand { display: flex; align-items: center; gap: 12px; color: var(--white); text-decoration: none; font: 800 1.3rem var(--display); font-stretch: 80%; }
+.brand b { font-weight: 850; }
+.brand img { width: 40px; height: 40px; filter: drop-shadow(0 0 10px rgba(46,155,255,.55)); }
+.bar nav { display: flex; gap: 8px; }
+.bar nav a { color: var(--muted); text-decoration: none; font-weight: 600; font-size: .96rem; padding: 8px 14px; border-radius: 999px; transition: color .15s, background .15s; }
+.bar nav a:hover { color: var(--white); background: rgba(79,209,255,.08); }
+.bar nav a.cta { color: var(--white); border: 1px solid var(--line-2); }
+
+/* Portada */
+.hero { position: relative; padding: 72px 0 0; overflow: hidden; isolation: isolate; }
+.hero::before { content: ""; position: absolute; inset: -20% -10% auto; height: 120%; z-index: -2;
+  background: radial-gradient(40% 50% at 78% 30%, rgba(46,123,255,.35), transparent 70%), radial-gradient(35% 40% at 15% 10%, rgba(138,108,255,.22), transparent 70%); }
+.hero::after { content: ""; position: absolute; inset: 0; z-index: -1; opacity: .35;
+  background-image: linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px); background-size: 56px 56px;
+  -webkit-mask-image: radial-gradient(70% 60% at 50% 30%, #000 30%, transparent 75%); mask-image: radial-gradient(70% 60% at 50% 30%, #000 30%, transparent 75%); }
+.hero .wrap { display: grid; grid-template-columns: 1fr 1.1fr; gap: 48px; align-items: center; }
+.hero-copy { padding-bottom: 40px; }
+.hero h1 { font-size: clamp(2.9rem, 5.6vw, 4.8rem); line-height: .94; }
+.hero h1 span { display: block; }
+.hero p { font-size: 1.22rem; color: var(--muted); max-width: 30em; margin: 24px 0 32px; }
+.hero .ctas { display: flex; flex-wrap: wrap; gap: 14px; }
+.hero .free { margin-top: 20px; font-size: .95rem; color: var(--muted); display: flex; flex-wrap: wrap; gap: 8px; }
+.hero .free span { border: 1px solid var(--line); border-radius: 999px; padding: 4px 12px; background: rgba(255,255,255,.02); }
+.stage { position: relative; min-height: 460px; }
+.stage .logo { position: absolute; left: 50%; top: 4%; width: min(260px, 52%); transform: translateX(-50%); z-index: 3; filter: drop-shadow(0 0 40px rgba(46,155,255,.6)); animation: float 6s ease-in-out infinite; }
+@keyframes float { 50% { transform: translate(-50%, -10px); } }
+.stage .pc { position: absolute; left: 0; right: 8%; bottom: 0; border-radius: 16px 16px 0 0; border: 1px solid var(--line-2); box-shadow: 0 -10px 70px rgba(46,123,255,.25); opacity: .92; }
+.stage .phone { position: absolute; right: 0; bottom: 0; width: 30%; border-radius: 26px 26px 0 0; border: 6px solid #13213C; border-bottom: 0; box-shadow: -20px 0 60px rgba(0,0,0,.55), 0 0 0 1px var(--line-2); z-index: 2; }
+.wave { display: block; width: 100%; height: 90px; margin-top: -1px; }
+
+/* Prueba */
+.proof { padding: 96px 0; }
+.proof .wrap { display: grid; grid-template-columns: .85fr 1.15fr; gap: 56px; align-items: center; }
+.demo { position: relative; background: var(--card); border: 1px solid var(--line); border-radius: 24px; padding: 30px; backdrop-filter: blur(10px); box-shadow: 0 30px 80px rgba(0,0,0,.45); }
+.demo::before { content: ""; position: absolute; inset: -1px; border-radius: 24px; padding: 1px; background: var(--grad); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; opacity: .55; pointer-events: none; }
+.demo .ask { margin-left: auto; width: fit-content; max-width: 85%; background: var(--grad); color: var(--white); padding: 12px 18px; border-radius: 18px 18px 4px 18px; font-weight: 600; }
+.demo .answer { margin: 22px 0 18px; font-size: 1.12rem; }
+.demo .answer sup { color: var(--cyan); font-weight: 800; }
+.demo .src { border-top: 1px dashed var(--line-2); padding-top: 18px; }
+.demo .src small { display: block; color: var(--muted); font-size: .9rem; margin-bottom: 8px; }
+.demo blockquote { margin: 0; font: italic 500 1.32rem/1.5 var(--quote); border-left: 4px solid var(--cyan); padding-left: 18px; color: var(--white); }
+.hl { background-image: linear-gradient(transparent 12%, rgba(79,209,255,.35) 12%, rgba(79,209,255,.35) 90%, transparent 90%); background-repeat: no-repeat; background-size: 0% 100%; animation: marker 1.1s .6s cubic-bezier(.6,0,.2,1) forwards; }
+@keyframes marker { to { background-size: 100% 100%; } }
+@media (prefers-reduced-motion: reduce) { .hl { background-size: 100% 100%; } }
+.demo .note { margin: 16px 0 0; font-size: .85rem; color: var(--muted); }
+
+/* Descargas */
+.downloads { padding: 96px 0; background: linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 100%); border-top: 1px solid var(--line); }
+.platforms { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; margin-top: 12px; }
+@media (max-width: 1100px) { .platforms { grid-template-columns: repeat(2, 1fr); } }
+.platform { background: var(--card); border: 1px solid var(--line); border-radius: 20px; padding: 26px; display: flex; flex-direction: column; gap: 14px; transition: border-color .2s, transform .2s, box-shadow .2s; }
+.platform:hover { border-color: var(--line-2); transform: translateY(-3px); }
+.platform.first { border-color: rgba(79,209,255,.5); box-shadow: var(--glow); }
+.platform .icon { width: 52px; height: 52px; border-radius: 14px; background: rgba(79,209,255,.08); border: 1px solid var(--line); display: grid; place-items: center; color: var(--cyan); }
+.platform p { margin: 0; color: var(--muted); font-size: 1rem; }
+.platform .gap { flex: 1; }
+.store-slot { height: 84px; display: flex; align-items: center; justify-content: center; }
+.action-slot { height: 64px; display: flex; align-items: center; justify-content: center; }
+.action-slot .btn { width: 100%; }
+.store-box { display: flex; align-items: center; gap: 12px; width: 100%; max-width: 230px; height: 76px; padding: 0 16px; border: 1px solid var(--line-2); border-radius: 14px; text-decoration: none; color: var(--white); background: rgba(255,255,255,.04); box-sizing: border-box; transition: border-color .15s; }
+a.store-box:hover { border-color: var(--cyan); }
+.store-box img { width: 46px; height: auto; flex: none; }
+.store-box span { display: flex; flex-direction: column; font-weight: 800; font-size: 1.05rem; line-height: 1.15; }
+.store-box small { font-weight: 500; font-size: .78rem; color: var(--muted); }
+.store-box.soon { filter: grayscale(1); opacity: .45; }
+.store-box img.gplay { width: 100%; max-width: 190px; margin: 0 auto; }
+#playLink { border: 0; padding: 0; justify-content: center; background: none; }
+.soon-label { font-weight: 700; font-size: .8rem; letter-spacing: .14em; text-transform: uppercase; color: var(--cyan); border: 1px solid var(--line-2); border-radius: 999px; padding: 6px 14px; }
+.platform .btn { justify-content: center; text-align: center; padding: 12px 14px; font-size: .96rem; line-height: 1.25; }
+details { margin-top: 26px; background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 16px 20px; }
+details summary { cursor: pointer; font-weight: 700; }
+details ul { margin: 12px 0 0; padding-left: 20px; color: var(--muted); }
+details li { margin: 6px 0; }
+details b { color: var(--text); }
+
+/* Pasos */
+.how { padding: 96px 0; }
+.steps { list-style: none; padding: 0; margin: 20px 0 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; counter-reset: s; }
+.steps li { counter-increment: s; background: var(--card); border: 1px solid var(--line); border-radius: 20px; padding: 26px; }
+.steps li::before { content: "0" counter(s); display: block; font: 850 3rem/1 var(--display); font-stretch: 75%; background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; margin-bottom: 14px; }
+.steps p { margin: 10px 0 0; color: var(--muted); }
+
+/* Vídeo */
+.film { padding: 96px 0; position: relative; overflow: hidden; background: radial-gradient(60% 80% at 70% 50%, rgba(46,123,255,.18), transparent 70%), var(--bg-2); border-block: 1px solid var(--line); }
+.film .wrap { display: grid; grid-template-columns: .7fr 1.3fr; gap: 48px; align-items: center; }
+.film p { color: var(--muted); }
+.film .frame { position: relative; border-radius: 20px; padding: 1px; background: var(--grad); box-shadow: 0 30px 90px rgba(46,123,255,.35); }
+.film video { width: 100%; border-radius: 19px; background: #000; }
+.film-note { grid-column: 2; margin: -32px 0 0; font-size: .85rem; color: var(--muted); text-align: right; }
+@media (max-width: 900px) { .film-note { grid-column: auto; margin-top: -32px; } }
+
+/* Funciones */
+.features { padding: 96px 0; }
+.flist { list-style: none; padding: 0; margin: 20px 0 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.flist li { display: flex; flex-direction: column; gap: 12px; background: var(--card); border: 1px solid var(--line); border-radius: 20px; padding: 24px; }
+.flist svg { color: var(--cyan); width: 44px; height: 44px; padding: 9px; border-radius: 12px; background: rgba(79,209,255,.08); border: 1px solid var(--line); }
+.flist b { display: block; font-size: 1.12rem; margin-bottom: 4px; }
+.flist span { color: var(--muted); font-size: 1rem; }
+
+/* Capturas */
+.screens { padding: 0 0 96px; }
+.shots { display: grid; grid-template-columns: 2.1fr 1fr 1fr; gap: 18px; align-items: start; }
+.shots figure { margin: 0; }
+.shots img { border-radius: 16px; border: 1px solid var(--line-2); box-shadow: 0 20px 50px rgba(0,0,0,.45); }
+.shots figcaption { font-size: .92rem; color: var(--muted); margin-top: 10px; }
+
+/* Anunciantes */
+.ads { padding: 0 0 96px; }
+.ads .box { position: relative; overflow: hidden; border-radius: 28px; padding: 48px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px; background: var(--grad); box-shadow: 0 30px 80px rgba(46,123,255,.35); }
+.ads h2 { margin: 0 0 8px; color: var(--white); }
+.ads p { margin: 0; max-width: 34em; color: rgba(255,255,255,.88); }
+.ads .btn { background: var(--bg); color: var(--white); }
+
+/* Pie */
+footer { border-top: 1px solid var(--line); color: var(--muted); padding: 48px 0; font-size: 1rem; }
+footer .wrap { display: flex; flex-wrap: wrap; gap: 28px; justify-content: space-between; align-items: center; }
+footer a { color: var(--white); }
+.social { display: flex; flex-wrap: wrap; gap: 10px; }
+.social a { display: inline-grid; place-items: center; width: 46px; height: 46px; border-radius: 50%; border: 1px solid var(--line-2); color: var(--white); text-decoration: none; transition: border-color .15s, background .15s, box-shadow .2s; }
+.social a:hover { border-color: var(--cyan); background: rgba(79,209,255,.08); box-shadow: 0 0 20px rgba(79,209,255,.25); }
+.social a.pill { width: auto; border-radius: 999px; padding: 0 18px; font-weight: 600; font-size: .95rem; }
+
+@media (max-width: 900px) {
+  .bar .wrap { height: auto; min-height: 64px; flex-wrap: wrap; padding-block: 12px 10px; row-gap: 10px; }
+  .bar nav { width: calc(100% + 48px); margin-inline: -24px; padding-inline: 24px; overflow-x: auto; scrollbar-width: none; gap: 6px; }
+  .bar nav::-webkit-scrollbar { display: none; }
+  .bar nav a { flex: none; font-size: .88rem; padding: 6px 12px; border: 1px solid var(--line); }
+  section[id] { scroll-margin-top: 120px; }
+  .hero .wrap, .proof .wrap, .film .wrap { grid-template-columns: 1fr; }
+  .hero { padding-top: 48px; }
+  .hero-copy { padding-bottom: 0; }
+  .stage { min-height: 0; aspect-ratio: 1.25; }
+  .steps, .flist { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 640px) {
+  .platforms, .steps, .flist { grid-template-columns: 1fr; }
+  .shots { grid-template-columns: 1fr 1fr; }
+  .shots figure:first-child { grid-column: 1 / -1; }
+  .ads .box { padding: 32px 24px; }
+}
+@media (max-width: 560px) {
+  .wrap { padding: 0 16px; }
+  .bar nav { width: calc(100% + 32px); margin-inline: -16px; padding-inline: 16px; }
+  body { font-size: 17px; }
+  .hero .ctas .btn { width: 100%; justify-content: center; }
+  .demo { padding: 20px; }
+  .demo blockquote { font-size: 1.18rem; }
+}
+</style>
+
+<style>
+.dev-hero { padding: 72px 0 24px; }
+.dev-hero h1 { font-size: clamp(2.6rem, 6vw, 4.4rem); }
+.apps { padding: 24px 0 64px; display: grid; gap: 22px; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); }
+.app { background: var(--card); border: 1px solid var(--line); border-radius: 22px; padding: 28px; backdrop-filter: blur(8px); display: flex; flex-direction: column; gap: 14px; }
+.app .top { display: flex; align-items: center; gap: 14px; }
+.app .top img { width: 64px; height: 64px; border-radius: 16px; filter: drop-shadow(0 0 14px rgba(46,155,255,.5)); }
+.app .lucas-ico { width: 64px; height: 64px; border-radius: 16px; background: #0b0b0b; display: grid; place-items: center; font: 900 2.2rem/1 var(--display); color: #FF7A1A; text-shadow: 0 0 14px rgba(255,122,26,.8); border: 1px solid rgba(255,122,26,.35); }
+.app h3 { font-size: 1.7rem; }
+.app .sub { color: var(--muted); margin: 0; }
+.app p { margin: 0; color: var(--text); }
+.tags { display: flex; flex-wrap: wrap; gap: 8px; }
+.tags span { font: 600 .82rem var(--body); color: var(--cyan); border: 1px solid var(--line-2); border-radius: 999px; padding: 5px 12px; }
+.tags span.ok { color: #7CFFB2; border-color: rgba(124,255,178,.4); }
+.tags span.soon { color: var(--violet); border-color: rgba(138,108,255,.45); }
+.app .links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: auto; padding-top: 6px; }
+.app .links .btn { padding: 10px 16px; font-size: .95rem; }
+.soon-grid { padding: 0 0 72px; display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+.soon-card { border: 1px dashed var(--line-2); border-radius: 18px; padding: 22px; color: var(--muted); }
+.soon-card b { display: block; color: var(--white); font: 750 1.15rem var(--display); font-stretch: 85%; margin-bottom: 6px; }
+.info { padding: 0 0 80px; }
+.info .box { background: var(--card-solid); border: 1px solid var(--line); border-radius: 22px; padding: 28px; display: grid; gap: 10px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+.info dt { font: 700 .78rem var(--body); letter-spacing: .14em; text-transform: uppercase; color: var(--cyan); }
+.info dd { margin: 4px 0 14px; }
+</style>
+</head>
+<body>
+
+<header class="bar">
+  <div class="wrap">
+    <a class="brand" href="./"><img src="../img/icono-180.png" alt="" width="40" height="40"><span>FueradeTV <b class="grad-text">Apps</b></span></a>
+    <nav aria-label="Secciones">
+      <a href="#apps">Apps</a>
+      <a href="#proximamente">Próximamente</a>
+      <a href="#contacto">Contacto</a>
+      <a class="cta" href="../">FueradeTV IA</a>
+    </nav>
+  </div>
+</header>
+
+<section class="dev-hero">
+  <div class="wrap">
+    <div class="eyebrow">Desarrollador de aplicaciones</div>
+    <h1>FueradeTV hace <span class="grad-text">apps para informarse y para crear.</span></h1>
+    <p class="lead">Desde el medio FueradeTV desarrollamos aplicaciones para Windows, Android y Mac. Sin rastreo, sin registro obligatorio y con todo lo que importa explicado en la propia app.</p>
+  </div>
+</section>
+
+<section id="apps" class="wrap">
+  <h2>Nuestras <span class="grad-text">apps</span></h2>
+  <div class="apps">
+
+    <article class="app">
+      <div class="top">
+        <img src="../img/icono-180.png" alt="" width="64" height="64">
+        <div><h3>FueradeTV IA</h3><p class="sub">Tu asistente de noticias</p></div>
+      </div>
+      <p>Pregunta lo que quieras de la actualidad y la IA responde solo con noticias de medios verificados, enseñándote la frase exacta de la noticia que lo demuestra. Gratis, con un número de preguntas diarias; opcionalmente puedes usar tu propia clave de IA.</p>
+      <div class="tags"><span class="ok">Windows</span><span class="ok">Mac</span><span>Android</span><span class="soon">iPhone, muy pronto</span><span>Gratis · con anuncios</span><span>Solo en español</span></div>
+      <div class="links">
+        <a class="btn btn-main" href="../">Web de la app</a>
+        <a class="btn btn-line" href="https://apps.microsoft.com/detail/9ND38M4KHB5S" rel="noopener">Microsoft Store</a>
+        <a class="btn btn-line" href="../privacidad.html">Privacidad</a>
+      </div>
+    </article>
+
+    <article class="app">
+      <div class="top">
+        <div class="lucas-ico" aria-hidden="true">L</div>
+        <div><h3>Lucas · Editor de vídeo</h3><p class="sub">Para creadores de contenido</p></div>
+      </div>
+      <p>Editor de vídeo para Windows pensado para redes sociales: cortar y unir clips, subtítulos automáticos, texto, música y efectos, teleprompter, formatos vertical y horizontal, y un navegador integrado con tus redes para publicar sin salir del editor. Disponible en español, inglés, portugués, francés e italiano.</p>
+      <div class="tags"><span class="ok">Windows</span><span class="soon">Android, próximamente</span><span>0,99 € · pago único</span><span>Sin suscripciones</span><span>Sin rastreo</span></div>
+      <div class="links">
+        <a class="btn btn-main" href="https://lucasapp.pages.dev/" rel="noopener">Web de Lucas</a>
+        <a class="btn btn-line" href="https://apps.microsoft.com/search?query=Lucas+Editor+de+v%C3%ADdeo" rel="noopener">Microsoft Store</a>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<section id="proximamente" class="wrap">
+  <h2>Próximamente</h2>
+  <p class="lead">En lo que estamos trabajando ahora mismo.</p>
+  <div class="soon-grid">
+    <div class="soon-card"><b>FueradeTV IA para Android</b>Llegará a Google Play. La misma app, el mismo diseño, en tu móvil.</div>
+    <div class="soon-card"><b>Lucas para Android</b>Versión pensada para móviles plegables de dos pantallas: editor en una, redes en la otra.</div>
+    <div class="soon-card"><b>Lucas, tu mascota virtual</b>El robot de FueradeTV, con su propia app.</div>
+    <div class="soon-card"><b>Juegos</b>Nuestros primeros juegos para Android y PC están en desarrollo. Más noticias pronto.</div>
+  </div>
+</section>
+
+<section id="contacto" class="info wrap">
+  <h2>Información del <span class="grad-text">desarrollador</span></h2>
+  <dl class="box">
+    <div><dt>Desarrollador</dt><dd>FueradeTV</dd></div>
+    <div><dt>País</dt><dd>España</dd></div>
+    <div><dt>Contacto</dt><dd><a href="mailto:fueradetv@protonmail.com">fueradetv@protonmail.com</a></dd></div>
+    <div><dt>Web principal</dt><dd><a href="https://fueradetv.pages.dev/" rel="noopener">fueradetv.pages.dev</a></dd></div>
+    <div><dt>Privacidad</dt><dd><a href="../privacidad.html">Política de privacidad</a></dd></div>
+    <div><dt>Publicidad en las apps</dt><dd><a href="mailto:fueradetv@protonmail.com?subject=Publicidad%20en%20las%20apps%20de%20FueradeTV">Escríbenos</a></dd></div>
+  </dl>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <div class="brand" style="margin-bottom:10px"><img src="../img/icono-180.png" alt="" width="40" height="40"><span>FueradeTV <b class="grad-text">IA</b></span></div>
+      <div>© 2026 FueradeTV. <a href="../privacidad.html">Política de privacidad</a>. Contacto: <a href="https://fueradetv.pages.dev/" rel="noopener">fueradetv.pages.dev</a> · <a href="mailto:fueradetv@protonmail.com">fueradetv@protonmail.com</a></div>
+    </div>
+    <nav class="social" aria-label="FueradeTV en redes sociales">
+      <a href="https://www.tiktok.com/@fueradetvnoticias" rel="noopener" aria-label="TikTok" title="TikTok"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.6 2h-3.3v13.2a2.9 2.9 0 1 1-2-2.8V9a6.3 6.3 0 1 0 5.3 6.2V8.6a7.6 7.6 0 0 0 4.4 1.4V6.7a4.4 4.4 0 0 1-4.4-4.7z"/></svg></a>
+      <a href="https://www.instagram.com/fuerade.tv/" rel="noopener" aria-label="Instagram" title="Instagram"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+      <a href="https://www.youtube.com/@fueradetv?sub_confirmation=1" rel="noopener" aria-label="YouTube" title="YouTube"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 8.2a3 3 0 0 0-2.1-2.1C18 5.6 12 5.6 12 5.6s-6 0-7.9.5A3 3 0 0 0 2 8.2 31 31 0 0 0 1.6 12a31 31 0 0 0 .4 3.8 3 3 0 0 0 2.1 2.1c1.9.5 7.9.5 7.9.5s6 0 7.9-.5a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .4-3.8 31 31 0 0 0-.4-3.8zM10 15V9l5.2 3z"/></svg></a>
+      <a href="https://www.facebook.com/share/18eLTUnoWq/" rel="noopener" aria-label="Facebook" title="Facebook"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 8h3V4h-3a4 4 0 0 0-4 4v2H8v4h2v8h4v-8h3l1-4h-4V8.5a.5.5 0 0 1 .5-.5z"/></svg></a>
+      <a href="https://x.com/fueradetv" rel="noopener" aria-label="X" title="X"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.8 3h3.1l-6.8 7.7L22 21h-6.2l-4.9-6.4L5.3 21H2.2l7.2-8.3L2 3h6.4l4.4 5.8zm-1.1 16.2h1.7L7.4 4.7H5.6z"/></svg></a>
+      <a href="https://whatsapp.com/channel/0029VaD8UVn35fLuci9toi0f" rel="noopener" aria-label="Canal de WhatsApp" title="WhatsApp"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3z"/></svg></a>
+      <a class="pill" href="https://buymeacoffee.com/fueradetv" rel="noopener">Apóyanos</a>
+    </nav>
+  </div>
+</footer>
+
+</body>
+</html>
